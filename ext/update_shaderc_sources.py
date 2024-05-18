@@ -17,7 +17,7 @@ repositories."""
 from operator import attrgetter
 import argparse
 import json
-import os.path
+import os
 import subprocess
 import sys
 KNOWN_GOOD_FILE = 'known_good.json'
