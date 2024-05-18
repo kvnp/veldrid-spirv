@@ -24,10 +24,6 @@ jobs:
             build_target: win-arm64
             artifact_name: build\Release\win-arm64\libveldrid-spirv.dll
           - os: windows-latest
-            build_args: Release win-arm
-            build_target: win-arm
-            artifact_name: build\Release\win-arm\libveldrid-spirv.dll
-          - os: windows-latest
             build_args: release android arm64-v8a --android-ndk '%ANDROID_NDK_HOME%'
             build_target: android-arm64-v8a
             artifact_name: build\Release\android-arm64-v8a\libveldrid-spirv.so
@@ -141,6 +137,12 @@ jobs:
           name: win-x86
           path: build/Release/win-x86
 
+      - name: Download win-arm64
+        uses: actions/download-artifact@v2
+        with:
+          name: win-arm64
+          path: build/Release/win-arm64
+
       - name: Download android-arm64-v8a
         uses: actions/download-artifact@v2
         with:
@@ -164,6 +166,24 @@ jobs:
         with:
           name: linux-x64
           path: build/Release/linux-x64
+
+      - name: Download linux-x86
+        uses: actions/download-artifact@v2
+        with:
+          name: linux-x86
+          path: build/Release/linux-x86
+
+      - name: Download linux-arm64
+        uses: actions/download-artifact@v2
+        with:
+          name: linux-arm64
+          path: build/Release/linux-arm64
+
+      - name: Download linux-arm
+        uses: actions/download-artifact@v2
+        with:
+          name: linux-arm
+          path: build/Release/linux-arm
 
       - name: Download osx
         uses: actions/download-artifact@v2
