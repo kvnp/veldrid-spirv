@@ -55,7 +55,7 @@ jobs:
             build_args: release osx 'arm64;x86_64'
             build_target: osx
             artifact_name: build/Release/osx/libveldrid-spirv.dylib
-          - os: macos-latest
+          - os: macos-11
             build_args: release ios
             build_target: ios
             artifact_name: build/Release/ios/veldrid-spirv.xcframework.zip
