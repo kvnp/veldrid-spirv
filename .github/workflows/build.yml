@@ -20,6 +20,14 @@ jobs:
             build_target: win-x86
             artifact_name: build\Release\win-x86\libveldrid-spirv.dll
           - os: windows-latest
+            build_args: Release win-arm64
+            build_target: win-arm64
+            artifact_name: build\Release\win-arm64\libveldrid-spirv.dll
+          - os: windows-latest
+            build_args: Release win-arm
+            build_target: win-arm
+            artifact_name: build\Release\win-arm\libveldrid-spirv.dll
+          - os: windows-latest
             build_args: release android arm64-v8a --android-ndk '%ANDROID_NDK_HOME%'
             build_target: android-arm64-v8a
             artifact_name: build\Release\android-arm64-v8a\libveldrid-spirv.so
@@ -35,6 +43,18 @@ jobs:
             build_args: release linux-x64
             build_target: linux-x64
             artifact_name: build/Release/linux-x64/libveldrid-spirv.so
+          - os: ubuntu-20.04
+            build_args: release linux-x86
+            build_target: linux-x86
+            artifact_name: build/Release/linux-x86/libveldrid-spirv.so
+          - os: ubuntu-20.04
+            build_args: release linux-arm64
+            build_target: linux-arm64
+            artifact_name: build/Release/linux-arm64/libveldrid-spirv.so
+          - os: ubuntu-20.04
+            build_args: release linux-arm
+            build_target: linux-arm
+            artifact_name: build/Release/linux-arm/libveldrid-spirv.so
           - os: macos-11
             build_args: release osx 'arm64;x86_64'
             build_target: osx
